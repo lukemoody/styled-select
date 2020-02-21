@@ -1,0 +1,99 @@
+/*================ Styled Select ================*/
+
+.select-dropdown {
+	width: 100%;
+  max-width: 378px;
+	position: relative;
+	display: inline-block;
+	// z-index: 1;
+	margin-bottom: 20px;
+	color: $c-white;
+	font-size: 20px;
+	
+	&::last-child {
+		margin-right: 0px;
+	}
+
+	&__button {
+		// font-family: $f--body-med;
+		cursor: pointer;
+		padding: 7px 0;
+		display: flex;
+		align-items: center;
+		text-align: left;
+		justify-content: space-between;
+		border-bottom: 1px solid $c-accent-2;
+		height: 36px;
+		line-height: normal;
+		width: 100%;
+		transition: .15s linear;
+		background: transparent;
+		border-top: 0;
+		border-left: 0;
+		border-right: 0;
+		outline: none;
+		border-radius: 0;
+		&::focus {
+			outline: none;
+		}
+
+		.chevron-down {
+			position: absolute;
+			right: 10px;
+			top: 12px;
+			z-index: 999;
+			width: 14px;
+			height: 10px;
+			background-image: url('/wp-content/themes/homemadehomes/src/assets/icon/chev-down.svg');
+			background-repeat: no-repeat;
+			background-size: 100%;
+			@include transitionAll(transform 300ms ease);
+			&.active {
+				transform: rotate(90deg);
+			}
+		}
+	}
+
+	&__list {
+		position: absolute;
+		display: block;
+		left: 0;
+		right: 0;
+		max-height: 300px;
+		overflow: auto;
+		margin: 0;
+		padding: 0;
+		border-top: 0px solid transparent;
+		list-style-type: none;
+		opacity: 0;
+		pointer-events: none;
+		transform-origin: top left;
+		transform: scale(1,0);
+		transition: all ease-in-out .3s;
+		z-index: 2;
+
+		&.active {
+			opacity: 1;
+			pointer-events: auto;
+			transform: scale(1,1);
+
+			// .chevron-down {
+			// 	transform: rotate(180deg);
+			// }
+
+		}
+	}
+	&__list-item {
+		z-index: 10;
+		display: block;
+		list-style-type: none;
+		padding: 10px 15px;
+		background: $c-accent;
+		font-size: 14px;
+		line-height: 1.4;
+		cursor: pointer;
+		color: $c-body;
+		text-align: left;
+		transition: all ease-in-out .3s;
+	}
+}
