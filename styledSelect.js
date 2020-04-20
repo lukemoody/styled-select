@@ -39,7 +39,8 @@ const createStyledSelect = () => {
     var buttonElement = document.createElement("button"),
       spanElement = document.createElement("span"),
       // spanText = document.createTextNode("Select Items");
-      spanTextValue = document.querySelector('[data-label-value]').getAttribute('data-label-value'),
+//       spanTextValue = document.querySelector('[data-label-value]').getAttribute('data-label-value'),
+      spanTextValue = wrapper.querySelector('[data-label-value]').getAttribute('data-label-value'),
       spanText = document.createTextNode(spanTextValue);
 
     iElement = document.createElement("i");
